@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "YouareBroke"
+  "defaultProject": "YouareBroke",
+  "cli": {
+    "analytics": "5102dd5d-88e9-4792-9888-c98b21722c44"
+  }
 }

@@ -1,1 +1,40 @@
-<p>edit-expense works!</p>
+<div>
+  <br>
+  <mat-card>
+    <section class="mat-typography">
+      <h3>Update Expense</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="updateForm" class="edit-form">
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Expense title" formControlName="title" #title>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <mat-select placeholder="Category" formControlName="category" #category>
+        <mat-option value="Food">Food</mat-option>
+        <mat-option value="Travel">Travel</mat-option>
+        <mat-option value="Clothes">Clothes</mat-option>
+      </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Expense Month" formControlName="month" #month>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Expense amount" formControlName="amount" #amount>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Expense date" formControlName="date" #date>
+      </mat-form-field>
+      <br><br>
+      <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;
+<button type="submit" (click)="updateExpense(title.value,category.value,month.value,amount.value,date.value)"
+[disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button>
+
+
+
+    </form>
+  </mat-card>
+</div>
+

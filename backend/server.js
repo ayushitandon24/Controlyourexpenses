@@ -1,9 +1,8 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import Expense from './models/Expense';
-import { onErrorResumeNext } from 'rxjs';
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const Expense = require('./models/Expense');
 
 
 const app=express();
@@ -50,7 +49,7 @@ router.route('/expenses/add').post((req,res)=>  {
 });
 });
 
-router.route('expenses/upadte/:id').post((req,res)=>{
+router.route('/expenses/update/:id').post((req,res)=>{
   Expense.findById(req.params.id,(err,expense)=>{
     if(!expense)
     return next(new Error('Could not load document'));

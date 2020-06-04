@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
+
 const Schema=mongoose.Schema;
 
 let Expense = new Schema({
@@ -14,13 +15,13 @@ let Expense = new Schema({
   month:{
     type:String
   },
-  Date:
+  date:
   {
-    type:Date
+    type:String
   }
 
 
 //   timestamps: { currentTime: () => Math.floor(Date.now() / 1000)
 // }
 });
-export default mongoose.model('Expense', Expense);
+module.exports = mongoose.model('Expense', Expense);
